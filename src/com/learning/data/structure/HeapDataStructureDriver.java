@@ -16,10 +16,18 @@ public class HeapDataStructureDriver {
 		heap.add(5);
 		heap.add(20);
 		heap.add(30);
-		
 		heap.add(55);
 		
-		System.out.println("=======================");
+		System.out.println("===========Heap Populated============");
+		System.out.println(heap.delete());
+		System.out.println(heap.delete());
+		System.out.println(heap.delete());
+		System.out.println(heap.delete());
+		System.out.println(heap.delete());
+		System.out.println(heap.delete());
+		System.out.println(heap.delete());
+		System.out.println(heap.delete());
+		System.out.println("===========Heap Modified=============");
 
 	}
 

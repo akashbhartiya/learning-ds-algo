@@ -36,6 +36,48 @@ public class HeapDataStructure {
 
 
 	}
+	
+	
+	public int delete() {
+		int deletedElement = -1;
+		
+		if(counter<=1) {
+			return -1;
+		}
+		
+		deletedElement = this.data[1];
+		this.data[1] = this.data[this.counter-1];
+		this.data[this.counter-1] = 0;
+		this.counter = this.counter-1;
+		
+		int i = 1;
+		
+		while(i < counter) {
+			
+			int left = i*2;
+			int right = (i*2) + 1;
+			
+			int toBeSwappedWith = -1;
+			
+			
+			
+		    toBeSwappedWith = this.data[left]>this.data[right]?left:right;
+		    if(data[toBeSwappedWith] <= data[i]) {
+		    	return deletedElement;
+		    }
+			
+			
+
+			data[toBeSwappedWith] = data[toBeSwappedWith]^data[i];
+			data[i] = data[toBeSwappedWith]^data[i];
+			data[toBeSwappedWith] = data[toBeSwappedWith]^data[i];
+			
+			i = toBeSwappedWith;
+			
+			
+		}
+		return deletedElement;
+	}
 
 
 	private int[] resizeArray() {
