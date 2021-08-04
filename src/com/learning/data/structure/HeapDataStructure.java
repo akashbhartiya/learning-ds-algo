@@ -90,5 +90,55 @@ public class HeapDataStructure {
 	}
 	
 	
+	public void heapify(int[] arr, int size, int i) {
+        int largest = i;
+        int left = (i<<1) + 1 ;
+        int right = (i<<1) + 2;
+        
+        if((left < size) && (arr[left] > arr[largest])) {
+        	largest = left;
+        }
+        if((right < size) && (arr[right] > arr[largest])) {
+        	largest = right;
+        }
+        
+        if(largest != i) {
+        	
+        	arr[i] = arr[i]^arr[largest];
+        	arr[largest] = arr[i]^arr[largest];
+        	arr[i] = arr[i]^arr[largest];
+        	
+        	heapify(arr, size, largest);
+        	
+        }
+        
+		
+		
+	}
+
+
+	public void heapSort(int[] arr) {
+		
+		int len = arr.length;
+		
+		for(int i = len/2 -1 ;i >= 0; i-- ) {
+			this.heapify(arr, len, i);
+			}
+		
+		for(int i = len-1 ;i>0 ; i--) {
+			
+			arr[0] = arr[0]^arr[i];
+        	arr[i] = arr[0]^arr[i];
+        	arr[0] = arr[0]^arr[i];
+        	
+        	this.heapify(arr, i , 0);
+        	
+			
+			
+		}
+		
+		
+	}
+	
 
 }

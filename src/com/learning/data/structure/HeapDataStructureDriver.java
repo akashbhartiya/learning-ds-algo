@@ -29,6 +29,19 @@ public class HeapDataStructureDriver {
 		System.out.println(heap.delete());
 		System.out.println("===========Heap Modified=============");
 
+
+		int arrToBeHeap[] = {10,30,50,20,35,15};
+		
+		for(int i = arrToBeHeap.length/2-1;i >= 0; i-- ) {
+		heap.heapify(arrToBeHeap, arrToBeHeap.length-1, i);
+		}
+		
+		int arrToBeSorted[] = {60,86,1,54,5,72,9,2,88};
+		heap.heapSort(arrToBeSorted);
+		
+		System.out.println("==========================================");
+		
+		
 	}
 
 }
